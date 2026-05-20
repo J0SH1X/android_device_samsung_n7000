@@ -17,12 +17,12 @@
 # This variable is set first, so it can be overridden
 # by BoardConfigVendor.mk
 
--include device/samsung/galaxys2-common/BoardCommonConfig.mk
+-include device/samsung/smdk4412-common/BoardCommonConfig.mk
 
 TARGET_BOARD_INFO_FILE := device/samsung/n7000/configs/board-info.txt
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/n7000/configs/bluetooth
+$(call soong_config_set,brcm_libbt,bdroid_buildcfg_include_dir,device/samsung/n7000/bluetooth)
 
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
@@ -30,6 +30,12 @@ TARGET_KERNEL_CONFIG := lineageos_n7000_defconfig
 
 # assert
 TARGET_OTA_ASSERT_DEVICE := galaxynote,n7000,N7000,GT-N7000
+
+#Partitions
+BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 32768000
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2097152000
+BOARD_CACHEIMAGE_PARTITION_SIZE := 180224000
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2013-01-24
