@@ -1,0 +1,7 @@
+soong_namespace {
+
+}
+filegroup{
+    name: "vnd_n7000.txt",
+    srcs: ["bluetooth/vnd_n7000.txt"]
+}
