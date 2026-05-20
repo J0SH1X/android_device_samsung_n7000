@@ -15,7 +15,7 @@
 #
 
 # Include common makefile
-$(call inherit-product, device/samsung/galaxys2-common/common.mk)
+$(call inherit-product, device/samsung/smdk4412-common/common.mk)
 
 LOCAL_PATH := device/samsung/n7000
 
@@ -36,18 +36,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Proprietary blobs dependency on libstlport
 PRODUCT_PACKAGES += libstlport
 
-# Sensors
-PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl \
-    sensors.exynos4
-
 # GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/gps.xml:system/etc/gps.xml
-
-PRODUCT_PACKAGES += \
-    gps.exynos4 \
-    libdmitry
 
 # Keylayout
 PRODUCT_COPY_FILES += \
