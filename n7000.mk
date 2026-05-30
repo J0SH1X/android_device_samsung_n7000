@@ -30,9 +30,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=320
-
 # Proprietary blobs dependency on libstlport
 PRODUCT_PACKAGES += libstlport
 
