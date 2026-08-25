@@ -18,8 +18,9 @@
 PRODUCT_RELEASE_NAME := GT-N7000
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, vendor/lineage/config/common_mini_go_phone.mk)
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic.mk)
 
 # Inherit device configuration.
 $(call inherit-product, device/samsung/n7000/n7000.mk)

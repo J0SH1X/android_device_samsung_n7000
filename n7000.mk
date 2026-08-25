@@ -19,6 +19,9 @@ $(call inherit-product, device/samsung/galaxys2-common/common.mk)
 
 LOCAL_PATH := device/samsung/n7000
 
+# Audio package for Go
+$(call inherit-product, frameworks/base/data/sounds/AudioPackageGo.mk)
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -64,5 +67,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/input/idc/mxt224_ts_input.idc:system/usr/idc/mxt224_ts_input.idc \
     $(LOCAL_PATH)/configs/input/idc/sec_e-pen.idc:system/usr/idc/sec_e-pen.idc \
     $(LOCAL_PATH)/configs/input/idc/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc
+
+PRODUCT_PACKAGES += \
+    SystemUIGo
 
 $(call inherit-product-if-exists, vendor/samsung/n7000/n7000-vendor.mk)
